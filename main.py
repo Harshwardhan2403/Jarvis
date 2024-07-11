@@ -63,10 +63,13 @@ def processCommand(c):
         webbrowser.open("https://google.com")
     elif "open facebook" in c.lower():
         webbrowser.open("https://facebook.com")
+
     elif "open youtube" in c.lower():
         webbrowser.open("https://youtube.com")
+    
     elif "open linkedin" in c.lower():
         webbrowser.open("https://linkedin.com")
+    
     elif c.lower().startswith("play"):
         song = c.lower().split(" ")[1]
         link = musicLibrary.music[song]
@@ -89,8 +92,6 @@ def processCommand(c):
         # Let OpenAI handle the request
         output = aiProcess(c)
         speak(output) 
-
-
 
 
 
