@@ -24,8 +24,6 @@ def speak_old(text):
 
 def speak(text):
     tts = gTTS(text)
-
-
     tts.save('temp.mp3') 
 
     # Initialize Pygame mixer
@@ -55,7 +53,6 @@ def aiProcess(command):
         {"role": "user", "content": command}
     ]
     )
-
     return completion.choices[0].message.content
 
 def processCommand(c):
@@ -94,7 +91,6 @@ def processCommand(c):
         speak(output) 
 
 
-
 if __name__ == "__main__":
     speak("Initializing Jarvis....")
     while True:
@@ -117,7 +113,6 @@ if __name__ == "__main__":
                     command = r.recognize_google(audio)
 
                     processCommand(command)
-
 
         except Exception as e:
             print("Error; {0}".format(e))
